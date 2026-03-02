@@ -1,13 +1,82 @@
 #roadmap-section h2 {
   font-size: 2rem;
+  text-align: center;
+  margin-bottom: 25px;
 }
 #roadmap-section .roadmap {
+  --completed: 0%;
+  position: relative;
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  margin-left: 40px;
+}
+#roadmap-section .roadmap::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  border-radius: 999px;
+  background-color: var(--border);
+  z-index: 1;
+}
+#roadmap-section .roadmap::after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 0;
+  transform: translateX(-50%);
+  width: 2px;
+  height: var(--completed);
+  border-radius: 999px;
+  background-color: var(--glow);
+  box-shadow: 0px 0px 10px rgba(var(--glow-rgb), 0.8);
+  z-index: 2;
+  transition: height 0.3s ease-out;
 }
 #roadmap-section .roadmap .mission {
-  background-color: red;
+  position: relative;
+  padding: 10px;
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+#roadmap-section .roadmap .mission::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  aspect-ratio: 1/1;
+  border-radius: 999px;
+  background-color: var(--bg);
+  outline: 1px solid var(--border);
+  z-index: 3;
+}
+#roadmap-section .roadmap .mission::after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  width: 0px;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1/1;
+  border-radius: 999px;
+  background-color: var(--glow);
+  z-index: 3;
+  transition: width 0.6s var(--spring-easing);
+}
+#roadmap-section .roadmap .mission.completed::after {
+  width: 12px;
+}
+#roadmap-section .roadmap .mission:not(:last-child) {
+  margin-bottom: 10px;
+}
+#roadmap-section .roadmap .mission h3 {
+  font-size: 1.2rem;
 }
 
 /*# sourceMappingURL=roadmap.css.map */
