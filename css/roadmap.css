@@ -1,17 +1,13 @@
-/* Error: Expected expression.
- *    ,
- * 11 |             background-color: ;
- *    |                               ^
- *    '
- *   roadmap.scss 11:31  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Expected expression.\a    \2577 \a 11 \2502              background-color: ;\d\a    \2502                                ^\a    \2575 \a   roadmap.scss 11:31  root stylesheet";
+#roadmap-section h2 {
+  font-size: 2rem;
 }
+#roadmap-section .roadmap {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#roadmap-section .roadmap .mission {
+  background-color: red;
+}
+
+/*# sourceMappingURL=roadmap.css.map */
