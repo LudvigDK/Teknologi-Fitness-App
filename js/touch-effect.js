@@ -1,5 +1,5 @@
 const drag_effects = document.querySelectorAll('[draggable]')
-const drag_intensity = .008
+const drag_intensity = .01
 const size_decrease = .98
 
 drag_effects.forEach(e => {
@@ -25,8 +25,6 @@ drag_effects.forEach(e => {
 });
 
 document.addEventListener('touchmove', (event) => {
-    event.preventDefault();
-
     document.querySelectorAll('.dragging').forEach(e => {
         const touch = event.touches[0]
 
