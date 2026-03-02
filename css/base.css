@@ -20,3 +20,13 @@ main {
     padding: 16px;
     overflow-y: auto;
 }
+
+.no-anim,
+.no-anim::before,
+.no-anim::after,
+.no-anim *,
+.no-anim *::before,
+.no-anim *::after {
+    transition: none !important;
+    animation: none !important;
+}

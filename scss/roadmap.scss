@@ -1,14 +1,96 @@
 #roadmap-section {
     h2 {
         font-size: 2rem;
+        text-align: center;
+
+        margin-bottom: 25px;
     }
+
     .roadmap {
+        --completed: 0%;
+
+        $left-margin: 40px;
+
+        position: relative;
+
         list-style: none;
-        margin: 0;
         padding: 0;
+        margin: 0;
+        margin-left: $left-margin;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: calc(0px - $left-margin / 2);
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            border-radius: 999px;
+            background-color: var(--border);
+            z-index: 1;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            left: calc(0px - $left-margin / 2);
+            top: 0;
+            transform: translateX(-50%);
+            width: 2px;
+            height: var(--completed);
+            border-radius: 999px;
+            background-color: var(--glow);
+            box-shadow: 0px 0px 10px rgba(var(--glow-rgb), .8);
+            z-index: 2;
+
+            transition: height .3s ease-out;
+        }
 
         .mission {
-            background-color: red;
+            position: relative;
+            padding: 10px;
+
+            background-color: var(--bg-tertiary);
+            
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: calc(0px - $left-margin / 2);
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 20px;
+                aspect-ratio: 1/1;
+                border-radius: 999px;
+                background-color: var(--bg);
+                outline: 1px solid var(--border);
+                z-index: 3;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                left: calc(0px - $left-margin / 2);
+                top: 50%;
+                width: 0px;
+                transform: translate(-50%, -50%);
+                aspect-ratio: 1/1;
+                border-radius: 999px;
+                background-color: var(--glow);
+                z-index: 3;
+                transition: width .6s var(--spring-easing);
+            }
+            &.completed::after {
+                width: calc(20px - 8px);
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
         }
     }
 }

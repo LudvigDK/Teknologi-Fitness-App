@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="./css/config.css">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/skema.css">
     <link rel="stylesheet" href="./css/roadmap.css">
-    <link rel="stylesheet" href="./css/clean-nav.css">
 </head>
 
 <body>
@@ -36,14 +36,24 @@
             </div>
         </div>
         <div id="content">
+            <section id="skema-section">
+                <h2>Skema</h2>
+                <div class="week">
+
+                </div>
+            </section>
             <section id="roadmap-section">
                 <h2>Roadmap</h2>
                 <ul class="roadmap">
-                    <li class="mission">
+                    <li class="mission" onclick="setCompleted(this.parentElement, 1)">
                         <h3>Mission title</h3>
                         <p>Mission text</p>
                     </li>
-                    <li class="mission">
+                    <li class="mission" onclick="setCompleted(this.parentElement, 2)">
+                        <h3>Mission title</h3>
+                        <p>Mission text</p>
+                    </li>
+                    <li class="mission" onclick="setCompleted(this.parentElement, 3)">
                         <h3>Mission title</h3>
                         <p>Mission text</p>
                     </li>
@@ -53,5 +63,6 @@
     </main>
 
     <script src="./js/index.js"></script>
+    <script src="./js/roadmap.js"></script>
 </body>
 </html>
