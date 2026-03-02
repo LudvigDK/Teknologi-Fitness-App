@@ -84,12 +84,14 @@
                 width: calc(20px - 8px);
             }
 
-            &:not(:last-child) {
-                margin-bottom: 10px;
-            }
-
             h3 {
                 font-size: 1.2rem;
+            }
+        }
+
+        > * {
+            &:not(:last-child) {
+                margin-bottom: 10px;
             }
         }
     }

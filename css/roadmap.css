@@ -72,11 +72,11 @@
 #roadmap-section .roadmap .mission.completed::after {
   width: 12px;
 }
-#roadmap-section .roadmap .mission:not(:last-child) {
-  margin-bottom: 10px;
-}
 #roadmap-section .roadmap .mission h3 {
   font-size: 1.2rem;
+}
+#roadmap-section .roadmap > *:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=roadmap.css.map */

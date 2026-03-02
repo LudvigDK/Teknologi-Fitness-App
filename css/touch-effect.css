@@ -1,0 +1,6 @@
+.drag-wrapper {
+    touch-action: none;
+    will-change: transform;
+
+    transition: transform .15s ease-out;
+}
