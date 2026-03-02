@@ -1,7 +1,7 @@
 #content {
     --scroll: 0;
 
-    --plotted-scroll: calc(pow(calc(var(--scroll) / 25), .5) * 25);
+    --plotted-scroll: calc(pow(calc(max(var(--scroll), 0) / 25), .5) * 25);
 
     position: absolute;
 
@@ -27,12 +27,11 @@
 
 #bg {
     --content-scroll: 0;
-    --plotted-scroll: calc(pow(calc(var(--content-scroll) / 1.2), .5) * 5);
 
     position: fixed;
     width: 100%;
     height: 100%;
-    bottom: calc(var(--plotted-scroll) * 1px);
+    bottom: calc((var(--content-scroll) * .2) * 1px);
     left: 0;
 }
 
