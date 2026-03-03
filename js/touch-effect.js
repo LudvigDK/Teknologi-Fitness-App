@@ -51,8 +51,6 @@ document.addEventListener('touchmove', (event) => {
         const stretch_x = size_decrease + (Math.abs(diff_x) / max_stretch)
         const stretch_y = size_decrease + (Math.abs(diff_y) / max_stretch)
 
-        console.log(stretch_x, stretch_y)
-
         e.style = `transform: translate(${diff_x * drag_intensity}px, ${diff_y * drag_intensity}px) scale(${stretch_x}, ${stretch_y});`
     });
         

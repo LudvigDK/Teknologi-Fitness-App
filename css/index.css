@@ -136,7 +136,7 @@
     top: 32%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 255, 5, 0.5);
+    background-color: rgba(var(--primary-rgb), 0.5);
     border-radius: 50%;
     filter: blur(50px);
     animation-name: PulsatingGlow;
@@ -152,7 +152,7 @@
     top: 32%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 255, 5, 0.05);
+    background-color: rgba(var(--primary-rgb), 0.05);
     border-radius: 50%;
     filter: blur(50px);
     animation-name: PulsatingGlow;
@@ -183,6 +183,7 @@
 #progress-container {
     position: absolute;
     top: 58%;
+    /*bottom: calc(6rem + 20px + 20px + 50px + 50px);*/
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(255, 255, 255, 0.1);
@@ -194,8 +195,8 @@
 #progress-bar {
     width: 20%;
     height: 100%;
-    background-color: rgba(0, 255, 5, 255);
-    box-shadow: 0 0 10px rgba(0, 255, 5, 0.6);
+    background-color: rgba(var(--primary-rgb), 255);
+    box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.6);
     border-radius: 5px;
     transition: width 0.3s ease;
 }
@@ -203,6 +204,7 @@
 #progress-label {
     position: absolute;
     top: 59%;
+    /*bottom: calc(6rem + 20px + 20px + 50px + 20px);*/
     left: 50%;
     transform: translateX(-50%);
     font-size: 16px;
@@ -219,11 +221,11 @@
     font-size: 18px;
     font-weight: 600;
     color: #000;
-    background-color: rgba(0, 255, 5, 1);
-    background: radial-gradient(circle at center, rgba(0, 255, 5, 1) 0%, rgba(0, 255, 5, 0.8) 100%);
+    background-color: var(--primary);
+    background: radial-gradient(circle at center, var(--primary) 0%, rgba(var(--primary-rgb), 0.8) 100%);
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 255, 5, 0.1);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease transform .15s ease-out;
 }

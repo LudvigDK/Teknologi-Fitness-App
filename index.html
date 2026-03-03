@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,8 +35,12 @@
     <link rel="stylesheet" href="./css/quick-actions.css">
     <link rel="stylesheet" href="./css/skema.css">
     <link rel="stylesheet" href="./css/roadmap.css">
+    <link rel="stylesheet" href="./css/log-workout-modal.css">
 
+    <link rel="stylesheet" href="./css/roller.css">
     <link rel="stylesheet" href="./css/touch-effect.css">
+
+    <script src="./js/storage.js"></script>
 </head>
 
 <body>
@@ -62,7 +66,7 @@
                 <div id="progress-bar"></div>
             </div>
             <label id="progress-label">Næste udvikling: 2/5</label>
-            <button id="log-workout-btn" draggable>Registrer træning</button>
+            <button id="log-workout-btn" draggable onclick="showLogModal()">Registrer træning</button>
         </div>
         <div id="content">
             <section id="quick-actions-section">
@@ -103,9 +107,59 @@
         </div>
     </main>
 
+    <div id="log-workout-modal-outside" onclick="hideLogModal()"></div>
+    <div id="log-workout-modal" class="">
+        <h2>Registrer træning</h2>
+        <div id="time-row">
+            <div id="start-container" draggable>
+                <span class="label">Start tidspunkt</span>
+                <div class="flex-row">
+                    <span id="hour-roller" class="roller"></span>
+                    <span id="spacer">:</span>
+                    <span id="minute-roller" class="roller"></span>
+                </div>
+            </div>
+            <div id="duration-container" draggable>
+                <span class="label">Varighed</span>
+                <div class="flex-row">
+                    <span id="duration-roller" class="roller"></span>
+                    <span id="suffix">min</span>
+                </div>
+            </div>
+        </div>
+        <button id="register-btn" draggable>Registrer</button>
+    </div>
+    <script>
+    (() => {
+        const hour_roller = document.querySelector('#hour-roller')
+        const minute_roller = document.querySelector('#minute-roller')
+        const duration_roller = document.querySelector('#duration-roller')
+
+        const now = new Date()
+
+        for (let i = 0; i <= 23; i++) {
+            initial = ''
+            if (i === now.getHours()) initial = 'initial'
+            hour_roller.innerHTML += `<span ${initial} data-val="${String(i).padStart(2, '0')}" class="option">${String(i).padStart(2, '0')}</span>`
+        }
+        for (let i = 0; i <= 59; i++) {
+            initial = ''
+            if (i === now.getMinutes()) initial = 'initial'
+            minute_roller.innerHTML += `<span ${initial} data-val="${String(i).padStart(2, '0')}" class="option">${String(i).padStart(2, '0')}</span>`
+        }
+        for (let i = 0; i <= 90; i++) {
+            initial = ''
+            if (i === 15) initial = 'initial'
+            duration_roller.innerHTML += `<span ${initial} data-val="${String(i)}" class="option">${String(i)}</span>`
+        }
+    })()
+    </script>
+
     <script src="./js/index.js"></script>
     <script src="./js/roadmap.js"></script>
+    <script src="./js/log-workout.js"></script>
 
+    <script src="./js/roller.js"></script>
     <script src="./js/touch-effect.js"></script>
 </body>
 </html>

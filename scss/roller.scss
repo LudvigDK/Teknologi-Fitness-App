@@ -1,0 +1,40 @@
+.roller {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory; /* or x mandatory */
+    scroll-behavior: auto;       /* optional */
+    
+    width: fit-content;
+    height: 5em;
+    padding-block: 2em;
+
+    /* Firefox */
+    scrollbar-width: none;
+    /* IE + old Edge */
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
+    }
+
+    .option {
+        font-size: 1em;
+        line-height: 1em;
+        width: 100%;
+        height: 1em;
+
+        text-align: center;
+
+        scroll-snap-align: center;     /* start | center | end */
+        scroll-snap-stop: always;      /* tries to not skip steps */
+
+        --distanceToCenterY: 1em;
+        opacity: max(0, calc(1 - ((var(--distanceToCenterY) / 2.3em) * 1.2)));
+        transform: scale(max(0, calc(1 - ((var(--distanceToCenterY) / 2em) * .6))));
+        will-change: transform, opacity;
+    }
+}

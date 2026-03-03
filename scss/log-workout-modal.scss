@@ -1,0 +1,123 @@
+#log-workout-modal-outside {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+}
+body:has(#log-workout-modal.shown) #log-workout-modal-outside {
+    display: block;
+}
+
+#log-workout-modal {
+    &.shown {
+        transform: translateY(0);
+    }
+    transform: translateY(100%);
+    transition: transform var(--spring);
+    will-change: transform;
+
+    position: absolute;
+    bottom: 0;
+    width: 100dvw;
+    height: fit-content;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    #register-btn {
+        position: relative;
+        height: 50px;
+
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: black;
+        background-color: var(--primary);
+
+        border: none;
+        border-radius: 999px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2rem;
+    }
+
+    .label {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        color: rgba(var(--text-rgb), .7)
+    }
+
+    .flex-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    #time-row {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        gap: 20px;
+
+        position: relative;
+
+        #start-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+
+            position: relative;
+            padding: 20px;
+
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+
+            .flex-row {
+                font-size: 2rem;
+                height: 3em;
+                gap: 5px;
+            }
+            #spacer {
+                margin-bottom: .2em;
+            }
+        }
+        #duration-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+
+            position: relative;
+            padding: 20px;
+
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+
+            .flex-row {
+                font-size: 2rem;
+                height: 3em;
+                gap: .3em;
+            }
+            #suffix {
+                margin-bottom: .2em;
+            }
+        }
+    }
+}
