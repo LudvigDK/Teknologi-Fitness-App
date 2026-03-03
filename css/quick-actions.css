@@ -1,0 +1,28 @@
+#quick-actions-section #quick-stats-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  position: relative;
+  width: 100%;
+  height: fit-content;
+}
+#quick-actions-section #quick-stats-row .stat {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  padding: 15px;
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+#quick-actions-section #quick-stats-row .stat h3 {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: rgba(var(--text-rgb), 0.7);
+}
+#quick-actions-section #quick-stats-row .stat .stat-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=quick-actions.css.map */

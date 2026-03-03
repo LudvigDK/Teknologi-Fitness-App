@@ -1,0 +1,34 @@
+#quick-actions-section {
+    #quick-stats-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;  
+
+        position: relative;
+        width: 100%;
+        height: fit-content;
+
+        .stat {
+            position: relative;
+            width: 100%;
+            height: fit-content;
+
+            padding: 15px;
+
+            background-color: var(--bg-tertiary);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+
+            h3 {
+                font-size: .9rem;
+                font-weight: normal;
+                color: rgba(var(--text-rgb), .7)
+            }
+
+            .stat-value {
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+        }
+    }
+}

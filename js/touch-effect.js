@@ -1,6 +1,7 @@
 const drag_effects = document.querySelectorAll('[draggable]')
-const drag_intensity = .01
-const size_decrease = .98
+const drag_intensity = .011
+const size_decrease = .96
+const max_stretch = 12000
 
 drag_effects.forEach(e => {
     const wrapper = document.createElement('div');
@@ -28,9 +29,15 @@ document.addEventListener('touchmove', (event) => {
     document.querySelectorAll('.dragging').forEach(e => {
         const touch = event.touches[0]
 
-        const x = (touch.clientX - e.dataset.startX) * drag_intensity
-        const y = (touch.clientY - e.dataset.startY) * drag_intensity
-        e.style = `transform: translate(${x}px, ${y}px) scale(${size_decrease});`
+        const diff_x = touch.clientX - e.dataset.startX
+        const diff_y = touch.clientY - e.dataset.startY
+
+        const stretch_x = size_decrease + (Math.abs(diff_x) / max_stretch)
+        const stretch_y = size_decrease + (Math.abs(diff_y) / max_stretch)
+
+        console.log(stretch_x, stretch_y)
+
+        e.style = `transform: translate(${diff_x * drag_intensity}px, ${diff_y * drag_intensity}px) scale(${stretch_x}, ${stretch_y});`
     });
         
     }, { passive: false });

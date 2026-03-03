@@ -16,12 +16,12 @@
     <meta name="description" content="My mobile web app" />
     <meta name="theme-color" content="#111111" />
 
-    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="manifest" href="./manifest.json" />
 
     <!-- Icons -->
-    <link rel="icon" href="/icons/favicon-32.png" sizes="32x32" />
-    <link rel="icon" href="/icons/icon-192.png" sizes="192x192" />
-    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-180.png" />
+    <link rel="icon" href="./icons/icon-32.png" sizes="32x32" />
+    <link rel="icon" href="./icons/icon-192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="./icons/icon-180.png" />
 
     <!-- iOS PWA -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="./css/config.css">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/quick-actions.css">
     <link rel="stylesheet" href="./css/skema.css">
     <link rel="stylesheet" href="./css/roadmap.css">
 
@@ -50,6 +51,18 @@
             </div>
         </div>
         <div id="content">
+            <section id="quick-actions-section">
+                <div id="quick-stats-row">
+                    <div class="stat" draggable>
+                        <h3>Sidste træning</h3>
+                        <span class="stat-value">2 dage</span>
+                    </div>
+                    <div class="stat" draggable>
+                        <h3>Gns. varighed</h3>
+                        <span class="stat-value">18 min</span>
+                    </div>
+                </div>
+            </section>
             <section id="skema-section">
                 <h2>Skema</h2>
                 <div class="week">
