@@ -49,11 +49,73 @@
   100% {transform: translate(-50%, -50%) scale(1);}
 }
 
+#info-bar {
+    position: absolute;
+    height: fit-content;
+    width: 100px;
+    width: 90%;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#date-info {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+#date-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0px;
+}
+
+#date {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 1);
+    letter-spacing: 0px;
+}
+
+#streak-info {
+    height: fit-content;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    text-align: right;
+}
+
+#streak-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0px;
+}
+
+#streak {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 1);
+    letter-spacing: 0px;
+}
+
+#animal-text {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 200;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0px;
+}
 
 #animal {
     position: absolute;
     font-size: 100px;
-    top: 35%;
+    top: 32%;
     left: 50%;
     transform: translate(-50%, -50%);
     animation-name: hoverEffect;
@@ -66,7 +128,7 @@
     position: absolute;
     width: 100px;
     height: 100px;
-    top: 35%;
+    top: 32%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 255, 5, 0.5);
@@ -78,11 +140,11 @@
     animation-timing-function: ease-in-out;
 }
 
-#circle {
+#big-glow {
     position: absolute;
     width: 500px;
     height: 500px;
-    top: 35%;
+    top: 32%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 255, 5, 0.05);
@@ -96,15 +158,26 @@
 
 #animal-title {
     position: absolute;
-    top: 45%;
+    top: 42%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 32px;
 }
 
-.progress-container {
+#info-text {
     position: absolute;
-    top: 55%;
+    top: 48%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    width: 50%;
+}
+
+#progress-container {
+    position: absolute;
+    top: 58%;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(255, 255, 255, 0.1);
@@ -113,11 +186,39 @@
     border-radius: 5px;
 }
 
-.progress-bar {
+#progress-bar {
     width: 20%;
     height: 100%;
     background-color: rgba(0, 255, 5, 255);
     box-shadow: 0 0 10px rgba(0, 255, 5, 0.6);
     border-radius: 5px;
     transition: width 0.3s ease;
+}
+
+#progress-label {
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#log-workout-btn {
+    position: absolute;
+    bottom: 125px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    background-color: rgba(0, 255, 5, 1);
+    background: radial-gradient(circle at center, rgba(0, 255, 5, 1) 0%, rgba(0, 255, 5, 0.8) 100%);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 5, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
