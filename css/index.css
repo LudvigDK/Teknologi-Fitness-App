@@ -13,7 +13,7 @@
     width: 100%;
     height: fit-content;
     min-height: 1500px;
-    bottom: 200px;
+    bottom: calc(6rem + 20px);
     left: 50%;
 
     /*padding-inline: calc(min(var(--plotted-scroll) * 1px, 50px) / 2 + 20px);*/
@@ -59,7 +59,7 @@
     height: fit-content;
     width: 100px;
     width: 90%;
-    top: 20px;
+    top: 50px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -211,9 +211,9 @@
 
 #log-workout-btn {
     position: absolute;
-    bottom: 125px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: calc(6rem + 20px + 20px);
+    inset-inline: 0;
+    margin-inline: auto;
     width: 80%;
     height: 50px;
     font-size: 18px;

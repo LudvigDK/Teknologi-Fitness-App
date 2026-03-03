@@ -1,4 +1,5 @@
-.drag-wrapper {
+.drag-wrapper,
+[draggable] {
     touch-action: none;
     will-change: transform;
 
