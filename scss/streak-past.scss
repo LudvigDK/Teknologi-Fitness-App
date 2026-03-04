@@ -1,0 +1,35 @@
+#streak-past-section {
+    h2 {
+        font-size: 2rem;
+        text-align: center;
+
+        margin-bottom: 25px;
+    }
+
+    #streak-past-container {
+        display: grid;
+        grid-template-columns: repeat(28, 1fr);
+        grid-template-rows: repeat(13);
+        gap: 3px;
+
+        position: relative;
+        width: 100%;
+        height: fit-content;
+
+        .past-day {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1/1;
+
+            border-radius: 2px;
+
+            &.active {
+                background-color: rgb(var(--primary));
+            }
+
+            &.empty {
+                background-color: grey;
+            }
+        }
+    }
+}

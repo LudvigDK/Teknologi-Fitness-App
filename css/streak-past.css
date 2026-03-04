@@ -1,0 +1,28 @@
+#streak-past-section h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 25px;
+}
+#streak-past-section #streak-past-container {
+  display: grid;
+  grid-template-columns: repeat(28, 1fr);
+  grid-template-rows: repeat(13);
+  gap: 3px;
+  position: relative;
+  width: 100%;
+  height: fit-content;
+}
+#streak-past-section #streak-past-container .past-day {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 2px;
+}
+#streak-past-section #streak-past-container .past-day.active {
+  background-color: rgb(var(--primary));
+}
+#streak-past-section #streak-past-container .past-day.empty {
+  background-color: grey;
+}
+
+/*# sourceMappingURL=streak-past.css.map */
