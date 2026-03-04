@@ -3,7 +3,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100dvw;
   height: 100dvh;
 }
 
@@ -20,7 +20,7 @@ body:has(#log-workout-modal.shown) #log-workout-modal-outside {
   will-change: transform;
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 100dvw;
   height: fit-content;
   padding: 20px;
   display: flex;
