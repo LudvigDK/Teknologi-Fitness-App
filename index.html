@@ -59,9 +59,9 @@
             <p id="animal-text">Dit dyr er..</p>
             <div id="big-glow"></div>
             <div id="glow"></div>
-            <div id="animal">🦥</div>
-            <h1 id="animal-title">DOVENDYRET</h1>
-            <p id="info-text">Du er i gang – og det er det vigtigste.</p>
+            <div id="animal"></div>
+            <h1 id="animal-title"></h1>
+            <p id="info-text"></p>
             <div id="progress-container">
                 <div id="progress-bar"></div>
             </div>
@@ -153,6 +153,115 @@
             duration_roller.innerHTML += `<span ${initial} data-val="${String(i)}" class="option">${String(i)}</span>`
         }
     })()
+    </script>
+
+    <script id="animal-data" type="application/json">
+        [
+            {
+                "name": "Dovendyret",
+                "emoji": "🦥",
+                "tagline": "Du er i gang – og det er det vigtigste.",
+                "color": "0, 255, 5",
+                "glow": 0.5,
+                "days": 2
+            },
+            {
+                "name": "Skildpadden",
+                "emoji": "🐢",
+                "tagline": "Langsomme skridt, men faste resultater.",
+                "color": "0, 255, 160",
+                "glow": 0.5,
+                "days": 3
+            },
+            {
+                "name": "Ræven",
+                "emoji": "🦊",
+                "tagline": "Smidighed og hurtige fremskridt – du er på rette vej!",
+                "color": "255, 130, 0",
+                "glow": 0.6,
+                "days": 7
+            },
+            {
+                "name": "Ulven",
+                "emoji": "🐺",
+                "tagline": "Smidighed og hurtige fremskridt – du er på rette vej!",
+                "color": "136, 0, 255",
+                "glow": 0.5,
+                "days": 8
+            },
+            {
+                "name": "Ørnen",
+                "emoji": "🦅",
+                "tagline": "Højde og perspektiv – du ser det hele!",
+                "color": "0, 149, 255",
+                "glow": 0.5,
+                "days": 10
+            },
+            {
+                "name": "Krokodilen",
+                "emoji": "🐊",
+                "tagline": "Stærk og tilpasningsdygtig – du klarer alt, hvad der kommer!",
+                "color": "255, 0, 217",
+                "glow": 0.5,
+                "days": 12
+            },
+            {
+                "name": "Løven",
+                "emoji": "🦁",
+                "tagline": "Konge af din rejse – du har opnået storhed!",
+                "color": "255, 34, 0",
+                "glow": 0.8,
+                "days": 13
+            },
+            {
+                "name": "Næsehornet",
+                "emoji": "🦏",
+                "tagline": "Uovervindelig og stærk – intet kan stoppe dig!",
+                "color": "140, 0, 255",
+                "glow": 0.7,
+                "days": 15
+            },
+            {
+                "name": "Gorillaen",
+                "emoji": "🦍",
+                "tagline": "Kraftfuld og majestætisk – du er en ægte kriger!",
+                "color": "0, 0, 255",
+                "glow": 0.7,
+                "days": 20
+            },
+            {
+                "name": "Bjørnen",
+                "emoji": "🐻",
+                "tagline": "Stærk og modstandsdygtig – du har overvundet mange udfordringer!",
+                "color": "255, 0, 115",
+                "glow": 0.7,
+                "days": 25
+            },
+            {
+                "name": "Elefanten",
+                "emoji": "🐘",
+                "tagline": "Vis og majestætisk – du har opnået stor visdom på din rejse!",
+                "color": "0, 255, 123",
+                "glow": 0.7,
+                "days": 31
+            },
+            {
+                "name": "Hajen",
+                "emoji": "🦈",
+                "tagline": "Magtfuld og kraftfuld – du er en uovervindelig havets konge!",
+                "color": "106, 0, 255",
+                "glow": 0.8,
+                "days": 38
+            },
+            {
+                "name": "Føniksen",
+                "emoji": "🦅",
+                "tagline": "Du har rejst dig fra asken og genopstået stærkere end nogensinde!",
+                "color": "255, 98, 0",
+                "glow": 1.0,
+                "days": 356
+            }
+        ]
     </script>
 
     <script src="./js/index.js"></script>
