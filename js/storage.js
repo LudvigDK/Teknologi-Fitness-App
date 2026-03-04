@@ -47,7 +47,7 @@ function hoursUntilTwoDaysForwardMidnight(now = new Date()) {
 }
 
 
-let storage = null
+window.storage = null
 let default_storage = {
     workouts: [],
     avg_workout_duration: 0,
@@ -84,9 +84,6 @@ let default_storage = {
 }
 
 function RegisterWorkout(start, duration) {
-    if (typeof(start) !== Date)
-        console.error('"time" argument needs to be parsed as a Date object')
-
     const workout_start = new Date()
     workout_start.setHours(start.getHours())
     workout_start.setMinutes(start.getMinutes())
@@ -95,43 +92,47 @@ function RegisterWorkout(start, duration) {
 
     const span = getHourRangesForPeriod(workout_start, duration)
 
-    storage.streak += 1
-    storage.active_streak = true
+    window.storage.streak += 1
+    window.storage.active_streak = true
 
-    storage.workouts.push({
+    window.storage.workouts.push({
         iso: workout_start.toISOString(),
         duration: duration
     })
 
     span.forEach(key => {
-        storage.workout_heatmap[key] += 1
+        window.storage.workout_heatmap[key] += 1
     });
 
     let avg_duration = 0
-    storage.workouts.forEach(workout => {
+    window.storage.workouts.forEach(workout => {
         avg_duration += workout.duration
     });
-    avg_duration /= storage.workouts.length
-    storage.avg_workout_duration = avg_duration
+    avg_duration /= window.storage.workouts.length
+    window.storage.avg_workout_duration = avg_duration
 
-    save('storage', storage)
+    window.dispatchEvent(new Event('storageupdate'))
+
+    save('storage', window.storage)
 }
 
 function LoadStorage() {
-    storage = load('storage', default_storage)
+    window.storage = load('storage', default_storage)
 }
 
 function StorageTick(interval = 5000) {
     function streakCheck() {
-        if (storage.active_streak) {
-            const last_workout_time = new Date(storage.workouts.at(-1).iso)
+        if (window.storage.active_streak) {
+            const last_workout_time = new Date(window.storage.workouts.at(-1).iso)
             const hours_left_of_streak = hoursUntilTwoDaysForwardMidnight(last_workout_time)
             
-            storage.streak_left = Math.ceil(hours_left_of_streak)
+            window.storage.streak_left = Math.ceil(hours_left_of_streak)
             if (Math.ceil(hours_left_of_streak) == 0) {
-                storage.streak = 0
-                storage.active_streak = false
+                window.storage.streak = 0
+                window.storage.active_streak = false
             }
+
+            window.dispatchEvent(new Event('storageupdate'))
         }
     }
 
