@@ -11,19 +11,6 @@ const info_text = document.querySelector('#info-text')
 const progress_bar = document.querySelector('#progress-bar')
 const progress_label = document.querySelector('#progress-label')
 
-const main = document.querySelector('main')
-const content = document.querySelector('#content')
-const bg = document.querySelector('#bg')
-
-const glow = document.querySelector('#glow')
-const big_glow = document.querySelector('#big-glow')
-
-const animal = document.querySelector('#animal')
-const animal_title = document.querySelector('#animal-title')
-const info_text = document.querySelector('#info-text')
-const progress_bar = document.querySelector('#progress-bar')
-const progress_label = document.querySelector('#progress-label')
-
 function setAnimal(index) {
     save('stats', {
         animal_index: index,
@@ -90,7 +77,6 @@ window.addEventListener('scroll', () => {
     content.style.setProperty('--scroll', `${window.scrollY}`)
     bg.style.setProperty('--content-scroll', `${window.scrollY}`)
 })
-
 
 const date_display = document.querySelector('#date')
 
