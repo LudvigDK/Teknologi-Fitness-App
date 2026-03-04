@@ -22,7 +22,7 @@
   background-color: rgb(var(--primary-rgb));
 }
 #streak-past-section #streak-past-container .past-day.empty {
-  background-color: grey;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /*# sourceMappingURL=streak-past.css.map */
