@@ -28,9 +28,9 @@ body:has(#log-workout-modal.shown) #log-workout-modal-outside {
   gap: 20px;
   background-color: var(--bg-secondary);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius) var(--radius) 0 0;
 }
-#log-workout-modal #register-btn {
+#log-workout-modal #log-btn {
   position: relative;
   height: 50px;
   font-size: 1.2rem;

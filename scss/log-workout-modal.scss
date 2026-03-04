@@ -31,9 +31,9 @@ body:has(#log-workout-modal.shown) #log-workout-modal-outside {
 
     background-color: var(--bg-secondary);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border-radius: var(--radius) var(--radius) 0 0;
 
-    #register-btn {
+    #log-btn {
         position: relative;
         height: 50px;
 
