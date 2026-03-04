@@ -19,7 +19,7 @@
   border-radius: 2px;
 }
 #streak-past-section #streak-past-container .past-day.active {
-  background-color: rgb(var(--primary));
+  background-color: rgb(var(--primary-rgb));
 }
 #streak-past-section #streak-past-container .past-day.empty {
   background-color: grey;
