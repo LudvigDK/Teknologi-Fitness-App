@@ -147,7 +147,7 @@
             if (i === now.getMinutes()) initial = 'initial'
             minute_roller.innerHTML += `<span ${initial} data-val="${String(i).padStart(2, '0')}" class="option">${String(i).padStart(2, '0')}</span>`
         }
-        for (let i = 0; i <= 90; i++) {
+        for (let i = 15; i <= 180; i++) {
             initial = ''
             if (i === 15) initial = 'initial'
             duration_roller.innerHTML += `<span ${initial} data-val="${String(i)}" class="option">${String(i)}</span>`
@@ -158,6 +158,7 @@
     <script src="./js/index.js"></script>
     <script src="./js/roadmap.js"></script>
     <script src="./js/log-workout.js"></script>
+    <script src="./js/stats.js"></script>
 
     <script src="./js/roller.js"></script>
     <script src="./js/touch-effect.js"></script>

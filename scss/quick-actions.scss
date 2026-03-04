@@ -19,6 +19,25 @@
             border-radius: var(--radius);
             border: 1px solid var(--border);
 
+            transition: border-color .7s ease-out, transform .1s ease-out;
+
+            @keyframes warningGlow {
+                0% {
+                    box-shadow: inset 0 0 15px rgba(255, 166, 0, 0);
+                }
+                50% {
+                    box-shadow: inset 0 0 15px orange;
+                }
+                100% {
+                    box-shadow: inset 0 0 15px rgba(255, 166, 0, 0);
+                }
+            }
+
+            &.warning {
+                border-color: orange;
+                animation: warningGlow 5s ease-in-out infinite;
+            }
+
             h3 {
                 font-size: .9rem;
                 font-weight: normal;

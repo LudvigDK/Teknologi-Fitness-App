@@ -12,14 +12,14 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 main {
     position: relative;
     flex: 1;
     padding: 16px;
-    overflow-y: auto;
 }
 
 .no-anim,
