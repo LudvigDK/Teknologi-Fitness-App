@@ -48,7 +48,7 @@ function hoursUntilTwoDaysForwardMidnight(now = new Date()) {
 
 
 window.storage = null
-let default_storage = {
+const default_storage = {
     workouts: [],
     avg_workout_duration: 0,
     workout_heatmap: {
@@ -120,7 +120,7 @@ function LoadStorage() {
     window.storage = load('storage', default_storage)
 }
 
-function StorageTick(interval = 5000) {
+function StorageTick(interval = 60000) {
     function streakCheck() {
         if (window.storage.active_streak) {
             const last_workout_time = new Date(window.storage.workouts.at(-1).iso)

@@ -11,10 +11,18 @@ const info_text = document.querySelector('#info-text')
 const progress_bar = document.querySelector('#progress-bar')
 const progress_label = document.querySelector('#progress-label')
 
-main.addEventListener('scroll', () => {
-    content.style.setProperty('--scroll', `${main.scrollTop}`)
-    bg.style.setProperty('--content-scroll', `${main.scrollTop}`)
-})
+const main = document.querySelector('main')
+const content = document.querySelector('#content')
+const bg = document.querySelector('#bg')
+
+const glow = document.querySelector('#glow')
+const big_glow = document.querySelector('#big-glow')
+
+const animal = document.querySelector('#animal')
+const animal_title = document.querySelector('#animal-title')
+const info_text = document.querySelector('#info-text')
+const progress_bar = document.querySelector('#progress-bar')
+const progress_label = document.querySelector('#progress-label')
 
 function setAnimal(index) {
     save('stats', {
@@ -76,3 +84,21 @@ function updateAnimal() {
 
 loadStats()
 updateAnimal()
+
+window.addEventListener('scroll', () => {
+    console.log('aa')
+    content.style.setProperty('--scroll', `${window.scrollY}`)
+    bg.style.setProperty('--content-scroll', `${window.scrollY}`)
+})
+
+
+const date_display = document.querySelector('#date')
+
+function updateDate() {
+    const days = ['Søndag','Mandag','Tirsdag','Onsdag','Torsdag','Fridag','Lørdag'];
+    const months = ['Januar','Februar','Marts','April','Maj','Juni','Juli','August','September','November','December'];
+    const now = new Date()
+    date_display.textContent = `${days[now.getDay()]} d. ${now.getDate()} ${months[now.getMonth()]}`
+}
+
+setTimeout(updateDate, 60000);

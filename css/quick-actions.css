@@ -14,6 +14,22 @@
   background-color: var(--bg-tertiary);
   border-radius: var(--radius);
   border: 1px solid var(--border);
+  transition: border-color 0.7s ease-out, transform 0.1s ease-out;
+}
+@keyframes warningGlow {
+  0% {
+    box-shadow: inset 0 0 15px rgba(255, 166, 0, 0);
+  }
+  50% {
+    box-shadow: inset 0 0 15px orange;
+  }
+  100% {
+    box-shadow: inset 0 0 15px rgba(255, 166, 0, 0);
+  }
+}
+#quick-actions-section #quick-stats-row .stat.warning {
+  border-color: orange;
+  animation: warningGlow 5s ease-in-out infinite;
 }
 #quick-actions-section #quick-stats-row .stat h3 {
   font-size: 0.9rem;
