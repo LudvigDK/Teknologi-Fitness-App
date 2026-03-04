@@ -30,7 +30,8 @@ body:has(#log-workout-modal.shown) #log-workout-modal-outside {
     gap: 20px;
 
     background-color: var(--bg-secondary);
-    border: 1px solid var(--border);
+    border: solid var(--border);
+    border-width: 1px 0 0 0;
     border-radius: var(--radius) var(--radius) 0 0;
 
     #log-btn {
