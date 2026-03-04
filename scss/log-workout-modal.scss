@@ -19,7 +19,7 @@ body:has(#log-workout-modal.shown) #log-workout-modal-outside {
     transition: transform var(--spring);
     will-change: transform;
 
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100dvw;
     height: fit-content;
