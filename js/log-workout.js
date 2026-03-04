@@ -21,7 +21,7 @@ logSubmitBtn.addEventListener('click', () => {
     let start = new Date()
     start.setHours(Number(hourRoller.dataset.val))
     start.setMinutes(Number(minuteRoller.dataset.val))
-
+    alert('workout logged')
     RegisterWorkout(start, Number(durationRoller.dataset.val))
     hideLogModal()
 })
