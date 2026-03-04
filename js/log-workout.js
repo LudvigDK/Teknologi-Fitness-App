@@ -24,4 +24,5 @@ logSubmitBtn.addEventListener('click', () => {
     alert('workout logged')
     RegisterWorkout(start, Number(durationRoller.dataset.val))
     hideLogModal()
+    addProgress(1)
 })
