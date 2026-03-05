@@ -31,7 +31,7 @@ function updateStats() {
     }
 
     avg_duration_stat_title.textContent = 'Gns. varighed'
-    avg_duration_stat_val.textContent = `${storage.avg_workout_duration} min`
+    avg_duration_stat_val.textContent = `${Math.round(storage.avg_workout_duration)} min`
 
     streak_display.textContent = `${storage.streak} ${storage.streak == 1 ? 'dag' : 'dage'}`
 }

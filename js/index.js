@@ -48,6 +48,12 @@ function addProgress(amount) {
     updateAnimal()
 }
 
+function setPrimary(color) {
+    document.documentElement.style.setProperty('--primary-r', Number(color[0]))
+    document.documentElement.style.setProperty('--primary-g', Number(color[1]))
+    document.documentElement.style.setProperty('--primary-b', Number(color[2]))
+}
+
 function updateAnimal() {
     let animal_data = JSON.parse(
         document.getElementById('animal-data').textContent
@@ -65,15 +71,13 @@ function updateAnimal() {
     progress_bar.style.width = `${(stats.progress / animal_data[stats.animal_index].days) * 100}%`
     progress_label.textContent = `Næste udvikling: ${stats.progress}/${animal_data[stats.animal_index].days}`
 
-    console.log(animal_data[stats.animal_index].color)
-    document.documentElement.style.setProperty('--primary-rgb', animal_data[stats.animal_index].color)
+    setPrimary(animal_data[stats.animal_index].color)
 }
 
 loadStats()
 updateAnimal()
 
 window.addEventListener('scroll', () => {
-    console.log('aa')
     content.style.setProperty('--scroll', `${window.scrollY}`)
     bg.style.setProperty('--content-scroll', `${window.scrollY}`)
 })

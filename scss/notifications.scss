@@ -1,0 +1,45 @@
+.notification {
+    --content-width: 0px;
+
+    box-sizing: content-box;
+
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    overflow: hidden;
+
+    font-size: 1.3rem;
+    text-align: center;
+    justify-content: center;
+    line-height: 1em;
+    white-space: nowrap;
+    padding: .6em 1em .6em 1em;
+
+    border: 1px solid var(--border);
+    border-radius: 999px;
+
+    background-color: var(--bg-tertiary);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+    color: rgba(var(--text-rgb), 0);
+
+    transition: top var(--spring),
+                transform var(--spring),
+                width var(--spring),
+                height var(--spring),
+                color .7s ease-out;
+    transition-delay: 50ms, 50ms, 0ms, 0ms, 0ms;
+
+    &.shown {
+        top: calc(env(safe-area-inset-top) + 20px);
+        transform: translate(-50%, 0);
+        width: var(--content-width);
+        height: 1em;
+        color: rgba(var(--text-rgb), 1);
+        transition-delay: 0ms, 0ms, 50ms, 50ms, 50ms;
+    }
+}

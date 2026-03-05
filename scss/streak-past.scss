@@ -12,6 +12,8 @@
         grid-template-rows: repeat(13);
         gap: 3px;
 
+        touch-action: none;
+
         position: relative;
         width: 100%;
         height: fit-content;

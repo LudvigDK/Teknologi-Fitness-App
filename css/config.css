@@ -1,3 +1,7 @@
+@property --primary-r { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --primary-g { syntax: "<number>"; inherits: true; initial-value: 255; }
+@property --primary-b { syntax: "<number>"; inherits: true; initial-value: 5; }
+
 :root {
     --bg: #04080F;
     --bg-rgb: 17, 17, 17;
@@ -12,8 +16,11 @@
     --glow: white;
     --glow-rgb: 255, 255, 255;
 
+    --primary-r: 0;
+    --primary-g: 255;
+    --primary-b: 5;
     --primary: #00ff05;
-    --primary-rgb: 0, 255, 5;
+    --primary-rgb: var(--primary-r), var(--primary-g), var(--primary-b);
     --secondary: #A1C6EA;
     --secondary-rgb: 161, 198, 234;
     --tertiary: #BBD1EA;
@@ -27,5 +34,11 @@
     --spring-duration: 0.4681s;
     --spring: var(--spring-duration) var(--spring-easing);
 
-    --ease-out: cubic-bezier(0.22, 1, 0.36, 1)
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+    --theme-change: 1s ease-in-out;
+
+    transition: --primary-r var(--theme-change),
+                --primary-g var(--theme-change),
+                --primary-b var(--theme-change);
 }
