@@ -16,7 +16,9 @@ function daysSinceISO(iso) {
 
 function updateStats() {
     if (storage.streak_left <= 0) {
-        const days = daysSinceISO(window.storage.workouts.at(-1))
+        let days = daysSinceISO(window.storage.workouts.at(-1))
+        if (!days)
+            days = 0
 
         call_to_action_stat_title.textContent = 'Sidste træning'
         call_to_action_stat_val.textContent = `${days} ${days == 1 ? 'dag' : 'dage'}`

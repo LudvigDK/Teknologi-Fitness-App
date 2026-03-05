@@ -2,6 +2,16 @@ const logWorkoutModal = document.querySelector('#log-workout-modal')
 
 function showLogModal() {
     logWorkoutModal.classList.add('shown')
+
+    hourRoller.querySelector('[initial]').removeAttribute('initial')
+    minuteRoller.querySelector('[initial]').removeAttribute('initial')
+
+    hourRoller.childNodes[new Date().getHours()].setAttribute('initial', '1')
+    minuteRoller.childNodes[new Date().getMinutes()].setAttribute('initial', '1')
+
+    resetRoller(hourRoller)
+    resetRoller(minuteRoller)
+    resetRoller(durationRoller)
 }
 function hideLogModal() {
     logWorkoutModal.classList.remove('shown')

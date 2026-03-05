@@ -1,14 +1,22 @@
 const rollers = document.querySelectorAll('.roller');
 
+function resetRoller(r) {
+    const options = [...r.querySelectorAll('.option')];
+
+    // pick initial
+    let initial = r.querySelector('.option[initial]') || options[0];
+
+    // scroll to initial (center it)
+    r.scrollTop = initial.offsetTop - (r.clientHeight / 2) + (initial.offsetHeight / 2);
+    r.dataset.val = initial.dataset.val;
+
+    r.dispatchEvent(new Event('scroll'))
+}
+
 rollers.forEach(roller => {
     const options = [...roller.querySelectorAll('.option')];
 
-    // pick initial
-    let initial = roller.querySelector('.option[initial]') || options[0];
-
-    // scroll to initial (center it)
-    roller.scrollTop = initial.offsetTop - (roller.clientHeight / 2) + (initial.offsetHeight / 2);
-    roller.dataset.val = initial.dataset.val;
+    resetRoller(roller)
 
     function update() {
         // IMPORTANT: compute rRect INSIDE update (no drift)
