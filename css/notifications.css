@@ -21,7 +21,7 @@
   background-color: var(--bg-tertiary);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
   color: rgba(var(--text-rgb), 0);
-  transition: top var(--spring), transform var(--spring), width var(--spring), height var(--spring), color 0.7s ease-out;
+  transition: top 0.6s var(--spring-easing), transform 0.6s var(--spring-easing), width 0.6s var(--spring-easing), height 0.6s var(--spring-easing), color 0.7s ease-out;
   transition-delay: 50ms, 50ms, 0ms, 0ms, 0ms;
 }
 .notification.shown {
