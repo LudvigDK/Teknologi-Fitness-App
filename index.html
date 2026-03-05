@@ -218,9 +218,7 @@
         <div class="screen">
             <h2 draggable>Vi holder dig motiveret.</h2>
             <p draggable>Accepter notifikationer, så husker vi dig på din træning.</p>
-            <button class="next" draggable onclick="if (this.textContent === 'Accepter') { enablePush().then((r) => {
-                this.textContent = 'Videre'
-            }) } else { nextScreen() }">Accepter</button>
+            <button class="next" draggable onclick="if (this.textContent === 'Accepter') { this.textContent = 'Videre'; enablePush() } else { nextScreen() }">Accepter</button>
         </div>
         <div class="screen">
             <h2 draggable>Dit år på 1 blik.</h2>

@@ -18,6 +18,9 @@ function nextScreen() {
 }
 
 function endOnbording() {
+    screens.forEach(s => {
+        s.classList.remove('current')
+    });
     onbording.classList.remove('active')
     window.dispatchEvent(new Event('onbordingended'))
 }
