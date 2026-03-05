@@ -134,8 +134,8 @@
                 <h2>Dit år</h2>
                 <div id="streak-past-container"></div>
             </section>
-            <section id="roadmap-section">
-                <h2 draggable>Roadmap</h2>
+            <!--<section id="roadmap-section">
+                <h2>Roadmap</h2>
                 <ul class="roadmap">
                     <li class="mission" onclick="setCompleted(this.parentElement, 1)">
                         <h3>Mission title</h3>
@@ -150,7 +150,7 @@
                         <p>Mission text</p>
                     </li>
                 </ul>
-            </section>
+            </section>-->
         </div>
     </main>
 
@@ -204,31 +204,31 @@
 
     <div id="onbording-screens">
         <div class="screen">
-            <h2 draggable>Kun 15 min om dagen.</h2>
-            <p draggable>Det er nok til at holde dig sund.</p>
+            <h2>Kun 15 min om dagen.</h2>
+            <p>Det er nok til at holde dig sund.</p>
             <button class="next" draggable onclick="nextScreen()">Videre</button>
         </div>
         <div class="screen">
-            <h2 draggable>Planen er simpel.</h2>
-            <p draggable style="text-align: left;">📝 Registrer træning<br>
+            <h2>Planen er simpel.</h2>
+            <p style="text-align: left;">📝 Registrer træning<br>
                 🔥 Hold din streak<br>
                 🐯 Få nye kældedyr</p>
             <button class="next" draggable onclick="nextScreen()">Videre</button>
         </div>
         <div class="screen">
-            <h2 draggable>Vi holder dig motiveret.</h2>
-            <p draggable>Accepter notifikationer, så husker vi dig på din træning.</p>
+            <h2>Vi holder dig motiveret.</h2>
+            <p>Accepter notifikationer, så husker vi dig på din træning.</p>
             <button class="next" draggable onclick="if (this.textContent === 'Accepter') { this.textContent = 'Videre'; enablePush() } else { nextScreen() }">Accepter</button>
         </div>
         <div class="screen">
-            <h2 draggable>Dit år på 1 blik.</h2>
-            <p draggable>Tag én dag ad gangen, så tracker vi dit mønster.</p>
+            <h2>Dit år på 1 blik.</h2>
+            <p>Tag én dag ad gangen, så tracker vi dit mønster.</p>
             <img src="./images/image.png" draggable="wrapper">
             <button class="next" draggable onclick="nextScreen()">Videre</button>
         </div>
         <div class="screen">
-            <h2 draggable>Velkommen til FITNESS.</h2>
-            <p draggable>Lad os begynde.</p>
+            <h2>Velkommen til FITNESS.</h2>
+            <p>Lad os begynde.</p>
             <button class="next" draggable onclick="endOnbording(); showNotification('Tip: Træk op for at se dine stats.', 4000, 2500)">Begynd</button>
         </div>
     </div>
