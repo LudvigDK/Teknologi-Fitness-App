@@ -100,3 +100,12 @@ if (!load('onbording')) {
         save('onbording', true)
     }, { once: true })
 }
+
+let last_push_request = -1
+window.addEventListener('click', () => {
+    if (!load('onbording')) return;
+    if (new Date().getTime() - last_push_request > 1800000 || last_push_request === -1) {
+        window.enablePush()
+        last_push_request = new Date().getTime()
+    }
+})
