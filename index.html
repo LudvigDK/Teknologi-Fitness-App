@@ -68,7 +68,7 @@
                 return;
             }
 
-            const registration = await navigator.serviceWorker.register("/firebase-messaging-sw.js");
+            const registration = await navigator.serviceWorker.register("/workers/firebase-messaging-sw.js");
 
             const token = await getToken(messaging, {
                 vapidKey: "BOPjv9OudBt-O7yaTgsKc_IANXljy-LhwlvN_Dpzrvq_A-jU3S6u5S-p-a4JC16sk4RoitPzmWjqKv44j6v8nK0",
@@ -86,7 +86,6 @@
             console.log("Foreground message:", payload);
         });
     </script>
-    <script src="./workers/firebase-messaging-sw.js"></script>
 </head>
 
 <body>
