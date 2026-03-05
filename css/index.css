@@ -17,8 +17,7 @@
     left: 50%;
 
     /*padding-inline: calc(min(var(--plotted-scroll) * 1px, 50px) / 2 + 20px);*/
-    padding-inline: 20px;
-    padding-top: 20px;
+    padding: 20px;
 
     transform: translate(-50%, 100%);
 
