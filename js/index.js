@@ -92,3 +92,11 @@ function updateDate() {
 }
 
 setTimeout(updateDate, 60000);
+
+
+if (!load('onbording')) {
+    startOnbording()
+    window.addEventListener('onbordingended', () => {
+        save('onbording', true)
+    }, { once: true })
+}

@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="./css/roller.css">
     <link rel="stylesheet" href="./css/touch-effect.css">
     <link rel="stylesheet" href="./css/notifications.css">
+    <link rel="stylesheet" href="./css/onbording-screens.css">
 
     <script src="./js/storage.js"></script>
 
@@ -59,12 +60,7 @@
         const app = initializeApp(firebaseConfig);
         const messaging = getMessaging(app);
 
-        let allow_btn = document.createElement('buttton')
-        allow_btn.id = 'noti_allow_btn'
-
         async function enablePush() {
-
-            allow_btn.remove()
 
             const permission = await Notification.requestPermission();
 
@@ -82,17 +78,18 @@
 
             console.log("FCM TOKEN:", token);
 
+            return token;
+
             // save token to your database / server
         }
 
-        document.body.appendChild(allow_btn)
-        allow_btn.addEventListener('click', enablePush)
+        // ✅ expose globally
+        window.enablePush = enablePush;
 
         onMessage(messaging, (payload) => {
             console.log("Foreground message:", payload);
         });
     </script>
-    <link rel="stylesheet" href="./css/noti_allow_btn.css">
 </head>
 
 <body>
@@ -205,6 +202,39 @@
     })()
     </script>
 
+    <div id="onbording-screens">
+        <div class="screen">
+            <h2 draggable>Kun 15 min om dagen.</h2>
+            <p draggable>Det er nok til at holde dig sund.</p>
+            <button class="next" draggable onclick="nextScreen()">Videre</button>
+        </div>
+        <div class="screen">
+            <h2 draggable>Planen er simpel.</h2>
+            <p draggable style="text-align: left;">📝 Registrer træning<br>
+                🔥 Hold din streak<br>
+                🐯 Få nye kældedyr</p>
+            <button class="next" draggable onclick="nextScreen()">Videre</button>
+        </div>
+        <div class="screen">
+            <h2 draggable>Vi holder dig motiveret.</h2>
+            <p draggable>Accepter notifikationer, så husker vi dig på din træning.</p>
+            <button class="next" draggable onclick="if (this.textContent === 'Accepter') { enablePush().then((r) => {
+                this.textContent = 'Videre'
+            }) } else { nextScreen() }">Accepter</button>
+        </div>
+        <div class="screen">
+            <h2 draggable>Dit år på 1 blik.</h2>
+            <p draggable>Tag én dag ad gangen, så tracker vi dit mønster.</p>
+            <img src="./images/image.png" draggable="wrapper">
+            <button class="next" draggable onclick="nextScreen()">Videre</button>
+        </div>
+        <div class="screen">
+            <h2 draggable>Velkommen til FITNESS.</h2>
+            <p draggable>Lad os begynde.</p>
+            <button class="next" draggable onclick="endOnbording(); showNotification('Tip: Træk op for at se dine stats.', 2500, 3000)">Begynd</button>
+        </div>
+    </div>
+
     <script id="animal-data" type="application/json">
         [
             {
@@ -314,14 +344,15 @@
         ]
     </script>
 
+    <script src="./js/roller.js"></script>
+    <script src="./js/touch-effect.js"></script>
+    <script src="./js/notifications.js"></script>
+    <script src="./js/onbording-screens.js"></script>
+
     <script src="./js/index.js"></script>
     <script src="./js/roadmap.js"></script>
     <script src="./js/log-workout.js"></script>
     <script src="./js/stats.js"></script>
     <script src="./js/streak-past.js"></script>
-
-    <script src="./js/roller.js"></script>
-    <script src="./js/touch-effect.js"></script>
-    <script src="./js/notifications.js"></script>
 </body>
 </html>

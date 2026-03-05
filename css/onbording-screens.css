@@ -1,0 +1,82 @@
+#onbording-screens {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(0deg, var(--bg) 0%, var(--bg-tertiary) 100%);
+  opacity: 0;
+  pointer-events: none;
+  touch-action: none;
+  transition: opacity 1s ease-in-out;
+}
+#onbording-screens.active {
+  opacity: 1;
+  pointer-events: all;
+  transition-duration: 0s;
+}
+#onbording-screens .screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  padding-inline: 30px;
+  padding-bottom: 110px;
+  text-align: center;
+  background: linear-gradient(0deg, var(--bg) 0%, var(--bg-tertiary) 100%);
+  opacity: 0;
+  pointer-events: none;
+  touch-action: none;
+  transition: opacity 0.6s ease-in-out 0s;
+}
+#onbording-screens .screen.current {
+  opacity: 1;
+  pointer-events: all;
+  transition-delay: 0.6s;
+}
+#onbording-screens .screen h2 {
+  font-size: 2.3rem;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+#onbording-screens .screen p {
+  font-size: 1.3rem;
+}
+#onbording-screens .screen img {
+  width: 80%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+}
+#onbording-screens .screen:nth-child(2n+1) img {
+  transform: rotate(5deg);
+}
+#onbording-screens .screen:nth-child(2n+2) img {
+  transform: rotate(-5deg);
+}
+#onbording-screens .screen .next {
+  position: absolute;
+  bottom: calc(env(safe-area-inset-bottom) + 30px);
+  inset-inline: 0;
+  margin-inline: auto;
+  width: calc(100% - 60px);
+  height: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  background-color: rgb(var(--primary-rgb));
+  background: radial-gradient(circle at center, rgb(var(--primary-rgb), 1) 0%, rgba(var(--primary-rgb), 0.8) 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease transform 0.15s ease-out;
+}
+
+/*# sourceMappingURL=onbording-screens.css.map */
