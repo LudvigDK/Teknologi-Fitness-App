@@ -32,12 +32,12 @@
   background: linear-gradient(0deg, var(--bg) 0%, var(--bg-tertiary) 100%);
   opacity: 0;
   pointer-events: none;
-  touch-action: none;
   transition: opacity 0.6s ease-in-out 0s;
 }
 #onbording-screens .screen.current {
   opacity: 1;
   pointer-events: all;
+  touch-action: none;
   transition-delay: 0.6s;
 }
 #onbording-screens .screen h2 {
