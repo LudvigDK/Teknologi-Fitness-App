@@ -1,7 +1,7 @@
 {
-  "name": "FITNESS",
-  "short_name": "App",
-  "description": "Your app description here.",
+  "name": "BeastUp",
+  "short_name": "BeastUp",
+  "description": "",
   "start_url": "/Teknologi-Fitness-App/?source=pwa",
   "scope": "/",
   "display": "standalone",
